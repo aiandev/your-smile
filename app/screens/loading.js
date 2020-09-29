@@ -1,13 +1,13 @@
-import React from "react"
-import { ActivityIndicator, View, StyleSheet } from "react-native"
+import React from 'react'
+import { ActivityIndicator, View, StyleSheet } from 'react-native'
 
 //* Components
-import Screen from "../components/screen"
+import Screen from '../components/screen'
 
 const Loading = () => {
   return (
     <View style={styles.container}>
-      <ActivityIndicator size="large" color="#4C7EEC" />
+      <ActivityIndicator size='large' color='#4C7EEC' />
     </View>
   )
 }
@@ -15,9 +15,9 @@ const Loading = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 })
 
-export default Screen(Loading, "#fff", "dark-content")
+export default Screen(Loading, '#fff', 'dark-content')

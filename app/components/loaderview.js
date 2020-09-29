@@ -1,19 +1,19 @@
 import React from 'react'
-import { TouchableOpacity, Text, StyleSheet, View } from 'react-native'
+import { StyleSheet, View, ActivityIndicator } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 
-const Button = ({ background, onPress, title = '', color = '#fff' }) => {
+const LoaderView = ({ background, color = '#fff' }) => {
   return (
     <View style={styles.wrapper}>
-      <TouchableOpacity onPress={onPress} style={[styles.container, { backgroundColor: background }]}>
+      <View style={[styles.container, { backgroundColor: background }]}>
         {background ? (
-          <Text style={[styles.title, { color }]}>{title}</Text>
+          <ActivityIndicator size='large' color={color} />
         ) : (
           <LinearGradient start={[0, 1]} end={[1, 0]} style={styles.background} colors={['#5f27cd', '#48dbfb']}>
-            <Text style={[styles.title, { color }]}>{title}</Text>
+            <ActivityIndicator size='large' color={color} />
           </LinearGradient>
         )}
-      </TouchableOpacity>
+      </View>
     </View>
   )
 }
@@ -40,12 +40,6 @@ const styles = StyleSheet.create({
       height: 0,
     },
   },
-  title: {
-    color: '#fff',
-    fontSize: 20,
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-  },
   wrapper: {
     width: '100%',
     height: 80,
@@ -53,4 +47,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default Button
+export default LoaderView

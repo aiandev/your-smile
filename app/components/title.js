@@ -1,10 +1,10 @@
-import React from "react"
-import { View, Text, StyleSheet } from "react-native"
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
 
 //* Config
-import colors from "../config/colors"
+import colors from '../config/colors'
 
-const Title = ({ text = "", color = "#222f3e" }) => {
+const Title = ({ text = '', color = '#4C7EEC' }) => {
   return (
     <View style={styles.container}>
       <Text style={[styles.text, { color }]}>{text}</Text>
@@ -14,13 +14,13 @@ const Title = ({ text = "", color = "#222f3e" }) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
-    padding: 5,
+    width: '100%',
+    padding: 10,
   },
   text: {
-    fontSize: 40,
-    fontWeight: "bold",
-    textTransform: "capitalize",
+    fontSize: 25,
+    fontWeight: 'bold',
+    textTransform: 'capitalize',
   },
 })
 

@@ -1,6 +1,6 @@
-import React from "react"
-import Screens from "./app/screens"
-import DataProvider from "./DataProvider"
+import React from 'react'
+import Screens from './app/screens'
+import DataProvider from './DataProvider'
 
 export default function App() {
   return (

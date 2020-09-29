@@ -1,32 +1,36 @@
 import React, { useState, useCallback } from "react"
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-} from "react-native"
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native"
 import { FontAwesome5 as Icon } from "@expo/vector-icons"
 
 function Input({
   onChange,
   background,
+  borderWidth = 3,
   color = "#fff",
   value = "",
   placeHolder = "",
   isSecure = false,
   withTypeSwitch = false,
+  margin = 10,
+  marginLeft = 10,
+  marginRight = 10,
 }) {
   const [isSecured, setIsSecured] = useState(isSecure)
 
-  const toggle = useCallback(() => setIsSecured(!isSecured), [
-    isSecured,
-    setIsSecured,
-  ])
+  const toggle = useCallback(() => setIsSecured(!isSecured), [isSecured, setIsSecured])
 
   return (
     <View
-      style={[styles.container, { borderWidth: 3, borderColor: background }]}
+      style={[
+        styles.container,
+        {
+          borderWidth,
+          borderColor: background,
+          margin,
+          marginLeft,
+          marginRight,
+        },
+      ]}
     >
       <TextInput
         style={[styles.input, { paddingRight: isSecure ? 60 : 20, color }]}
@@ -39,11 +43,7 @@ function Input({
       />
       {withTypeSwitch && (
         <TouchableOpacity style={styles.inputTypeSwitch} onPress={toggle}>
-          <Icon
-            name={isSecured ? "eye" : "eye-slash"}
-            size={20}
-            color={color}
-          />
+          <Icon name={isSecured ? "eye" : "eye-slash"} size={20} color={color} />
         </TouchableOpacity>
       )}
     </View>

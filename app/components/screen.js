@@ -1,13 +1,13 @@
-import React from "react"
-import { View, StyleSheet, StatusBar, Platform } from "react-native"
-import { getStatusBarHeight } from "react-native-status-bar-height"
+import React from 'react'
+import { View, StyleSheet, StatusBar, Platform } from 'react-native'
+import { getStatusBarHeight } from 'react-native-status-bar-height'
 //* Config
-import colors from "../config/colors"
+import colors from '../config/colors'
 
-const statusbarDefaultColor = "#fff"
+const statusbarDefaultColor = '#fff'
 
 const CustomStatusBar = ({ color, barStyle }) => {
-  return Platform.OS === "android" ? (
+  return Platform.OS === 'android' ? (
     <StatusBar barStyle={barStyle} backgroundColor={color} />
   ) : (
     <View style={[styles.statusbar, { backgroundColor: color }]}>
@@ -16,11 +16,7 @@ const CustomStatusBar = ({ color, barStyle }) => {
   )
 }
 
-const Screen = (
-  WrappedComponent,
-  color = statusbarDefaultColor,
-  barStyle = "dark-content"
-) => props => {
+const Screen = (WrappedComponent, color = statusbarDefaultColor, barStyle = 'dark-content') => props => {
   return (
     <>
       <CustomStatusBar color={color} barStyle={barStyle} />

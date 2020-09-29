@@ -1,9 +1,9 @@
 export default {
-  background: "#fff",
+  background: '#fff',
   tabbar: {
     tint: {
-      active: "#1dd1a1",
-      inactive: "#c8d6e5",
+      active: '#1dd1a1',
+      inactive: '#c8d6e5',
     },
   },
 }

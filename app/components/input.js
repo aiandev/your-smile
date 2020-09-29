@@ -63,7 +63,14 @@ const styles = StyleSheet.create({
     maxHeight: 60,
     borderRadius: 30,
     margin: 10,
-    overflow: "hidden",
+    elevation: 5,
+    shadowColor: "#576574",
+    shadowRadius: 5,
+    shadowOpacity: 0.25,
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
   },
   input: {
     flex: 1,
