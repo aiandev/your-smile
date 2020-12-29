@@ -1,11 +1,9 @@
-import React from 'react'
-import Screens from './app/screens'
-import DataProvider from './DataProvider'
+import React from "react"
+import Screens from "./app/screens/index"
+import withProvider from "./provider"
 
-export default function App() {
-  return (
-    <DataProvider>
-      <Screens />
-    </DataProvider>
-  )
+function App() {
+  return <Screens />
 }
+
+export default withProvider(App)

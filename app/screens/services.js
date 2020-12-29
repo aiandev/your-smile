@@ -1,35 +1,61 @@
-import React from 'react'
-import { View, Text, StyleSheet, Dimensions, ScrollView } from 'react-native'
-import { LinearGradient } from 'expo-linear-gradient'
+import React from "react"
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  ScrollView,
+} from "react-native"
+import { LinearGradient } from "expo-linear-gradient"
 
 //* Config
-import config from '../config/config.json'
+import config from "../config/config.json"
 
 //* Components
-import Navbar from '../components/navbar'
-import Screen from '../components/screen'
+import Navbar from "../components/navbar"
+import Screen from "../components/screen"
 
-const { width } = Dimensions.get('window')
+const { width } = Dimensions.get("window")
 
 const Services = () => {
   const myConfig = config.screens.services
   return (
     <>
-      <Navbar title='Services' color='#8395a7' withBackButton />
+      <Navbar
+        title="Services"
+        color="#8395a7"
+        withBackButton
+      />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.content}>
           <View style={styles.header}>
-            <Text style={styles.title}>{myConfig['header-title']}</Text>
-            <Text style={styles.headerDescription}>{myConfig['header-description']}</Text>
+            <Text style={styles.title}>
+              {myConfig["header-title"]}
+            </Text>
+            <Text style={styles.headerDescription}>
+              {myConfig["header-description"]}
+            </Text>
           </View>
           <View style={styles.servicesContainer}>
-            <Text style={styles.title}>{myConfig['services-title']}</Text>
+            <Text style={styles.title}>
+              {myConfig["services-title"]}
+            </Text>
             <View style={styles.services}>
               {myConfig.services.map((item, index) => (
-                <View key={index} style={styles.serviceContainer}>
+                <View
+                  key={index}
+                  style={styles.serviceContainer}
+                >
                   <View style={styles.service}>
-                    <LinearGradient style={styles.serviceBackground} start={[0, 1]} end={[1, -1]} colors={['#5f27cd', '#48dbfb']}>
-                      <Text style={styles.serviceTitle}>{item}</Text>
+                    <LinearGradient
+                      style={styles.serviceBackground}
+                      start={[0, 1]}
+                      end={[1, -1]}
+                      colors={["#5f27cd", "#48dbfb"]}
+                    >
+                      <Text style={styles.serviceTitle}>
+                        {item}
+                      </Text>
                     </LinearGradient>
                   </View>
                 </View>
@@ -43,7 +69,7 @@ const Services = () => {
 }
 
 const shadow = {
-  shadowColor: '#000',
+  shadowColor: "#000",
   shadowOffset: {
     width: 0,
     height: 0,
@@ -60,31 +86,31 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   header: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     borderRadius: 10,
     padding: 10,
     ...shadow,
     marginBottom: 10,
   },
   title: {
-    color: '#4C7EEC',
-    fontWeight: 'bold',
+    color: "#4C7EEC",
+    fontWeight: "bold",
     fontSize: 16,
-    textTransform: 'uppercase',
+    textTransform: "uppercase",
     marginBottom: 5,
   },
   headerDescription: {
-    color: '#8395a7',
+    color: "#8395a7",
   },
   servicesContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     borderRadius: 10,
     padding: 10,
     ...shadow,
   },
   services: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    flexDirection: "row",
+    flexWrap: "wrap",
   },
   serviceContainer: {
     width: serviceSize,
@@ -99,15 +125,15 @@ const styles = StyleSheet.create({
   serviceBackground: {
     flex: 1,
     borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   serviceTitle: {
-    fontWeight: 'bold',
-    color: '#fff',
+    fontWeight: "bold",
+    color: "#fff",
     fontSize: (width - 40) / 3 / 8,
-    textTransform: 'uppercase',
-    textAlign: 'center',
+    textTransform: "uppercase",
+    textAlign: "center",
   },
 })
 
