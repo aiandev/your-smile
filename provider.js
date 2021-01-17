@@ -2,15 +2,18 @@ import React from "react"
 
 import { NavigationContainer } from "@react-navigation/native"
 import { AuthProvider } from "./app/contexts/auth"
+import { DatabaseProvider } from "./app/contexts/db"
 
-const withProvider = App => {
+const withProviders = App => {
   return props => (
     <NavigationContainer>
       <AuthProvider>
-        <App {...props} />
+        <DatabaseProvider>
+          <App {...props} />
+        </DatabaseProvider>
       </AuthProvider>
     </NavigationContainer>
   )
 }
 
-export default withProvider
+export default withProviders

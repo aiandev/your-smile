@@ -1,21 +1,14 @@
-import React from 'react'
-import { StyleSheet } from 'react-native'
-import { FontAwesome5 as Icon } from '@expo/vector-icons'
+import React from "react"
+import { FontAwesome5 as Icon } from "@expo/vector-icons"
+import { WHITE } from "../config/constants"
 
-const Logo = props => {
-  return <Icon name='tooth' styles={styles.container} size={80} color={props.color || '#fff'} {...props} />
-}
-
-const styles = StyleSheet.create({
-  container: {
-    shadowRadius: 10,
-    shadowColor: '#fff',
-    shadowOpacity: 0.5,
-    shadowOffset: {
-      width: 0,
-      height: 0,
-    },
-  },
-})
+const Logo = ({ size = 80, color, ...rest }) => (
+  <Icon
+    name="tooth"
+    size={size}
+    color={color || WHITE}
+    {...rest}
+  />
+)
 
 export default Logo

@@ -1,9 +1,15 @@
 import React from "react"
 import Screens from "./app/screens/index"
-import withProvider from "./provider"
+import withProviders from "./provider"
+import { StatusBar } from "react-native"
 
 function App() {
-  return <Screens />
+  return (
+    <>
+      <StatusBar barStyle="dark-content" />
+      <Screens />
+    </>
+  )
 }
 
-export default withProvider(App)
+export default withProviders(App)
