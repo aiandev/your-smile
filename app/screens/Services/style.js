@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native"
 import { WIDTH, NAVY, WHITE } from "../../config/constants"
 
-const serviceSizeModifier = 3.75
+const serviceSizeModifier = 3.85
 
 export default StyleSheet.create({
   title: {

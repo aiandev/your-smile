@@ -15,10 +15,7 @@ import Container from "../../components/Container"
 const Reach = () => {
   const { data } = useDatabase()
   const { navigate } = useNavigation()
-
-  const delta = data.reach.delta
-  const latitude = data.reach.lat
-  const longitude = data.reach.long
+  const { delta, latitude, longitude } = data.reach
 
   return (
     <Wrapper>
@@ -45,9 +42,7 @@ const Reach = () => {
           </View>
           <Card space={10}>
             <Text style={styles.title}>Here we are</Text>
-            <Text style={styles.address}>
-              {data.contact.address}
-            </Text>
+            <Text style={styles.address}>{data.contact.address}</Text>
             <Button
               text="Contact us"
               onPress={() => navigate("contact")}

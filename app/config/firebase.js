@@ -1,12 +1,13 @@
 import firebase from "firebase"
 
 const config = {
-  apiKey: "AIzaSyCF8LxvIXCAcY_b74jk8ltfZ3Wx5ABBHo4",
-  authDomain: "dental-care-725ac.firebaseapp.com",
-  projectId: "dental-care-725ac",
-  storageBucket: "dental-care-725ac.appspot.com",
-  messagingSenderId: "641594101942",
-  appId: "1:641594101942:web:fa90ec5756a99cf822d617",
+  apiKey: "AIzaSyD2OxrksltBb3TuuGg6cW8IsTbfxgGqfrQ",
+  authDomain: "dentist-app-fa6f2.firebaseapp.com",
+  projectId: "dentist-app-fa6f2",
+  storageBucket: "dentist-app-fa6f2.appspot.com",
+  messagingSenderId: "56715042226",
+  appId: "1:56715042226:web:8fac37b8bcc3417f2fd8ab",
+  measurementId: "G-2DX75FBXQG",
 }
 
 const app = firebase.initializeApp(config)
